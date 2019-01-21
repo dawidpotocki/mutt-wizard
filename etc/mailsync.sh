@@ -2,9 +2,6 @@
 # This script will run offlineimap and check
 # for new email if there is an internet connection.
 #
-# If it detects new mail, it uses mpv to play a
-# notification sound: notify.opus
-#
 # I have this run as a cronjob every 5 minutes.
 
 export DISPLAY=:0.0
@@ -17,7 +14,7 @@ then
 	notify() { osascript -e "display notification \"$2 in $1\" with title \"You've got Mail\" subtitle \"Account: $account\"" && sleep 2 ;}
 else
 	ping -q -w 1 -c 1 `ip r | grep -m 1 default | cut -d ' ' -f 3` >/dev/null || exit
-	notify() { mpv --really-quiet ~/.config/mutt/etc/notify.opus & pgrep -x dunst && notify-send -i ~/.config/mutt/etc/email.gif "$2 new mail(s) in \`$1\` account." ;}
+	notify() { pgrep -x dunst && notify-send -i ~/.config/mutt/etc/neomutt.svg "$2 new mail(s) in \`$1\` account." ;}
 fi
 
 echo " 🔃" > ~/.config/mutt/.dl
@@ -38,7 +35,6 @@ do
 		notify "$account" "$newcount" &
 	fi
 done
-notmuch new
 
-#Create a touch file that indicates the time of the last run of mailsync
+# Create a touch file that indicates the time of the last run of mailsync
 touch ~/.config/mutt/etc/.mailsynclastrun

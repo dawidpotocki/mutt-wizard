@@ -1,4 +1,4 @@
-# Luke's mutt Wizard for automatic Neomutt and OfflineIMAP configuration!
+# Fork of Luke's mutt-wizard for automatic NeoMutt and OfflineIMAP configuration
 
 ![mutt wizard preview](etc/mw.png)
 
@@ -38,12 +38,6 @@ the right places. You get:
 
 ### Will it work on my email? (95% yes)
 
-Yes! At this point, the only problems are the unexpected ones. Please try it,
-and if you do run into problems, email me at
-[luke@lukesmith.xyz](mailto:luke@lukesmith.xyz)! I've tried the system
-personally on Gmail, Teknik.io, cock.li and Yandex, while others have tried
-other providers.
-
 If you have a ProtonMail account, due to their secure setup, you must have
 [ProtonMail Bridge](https://protonmail.com/bridge/) installed and configured.
 Compatibility with ProtonMail is still in testing, so be sure to open an issue
@@ -61,7 +55,7 @@ passwords. The whole repo should be cloned to `~/.config/mutt/`. (If you have a
 previous mutt folder, you'll want to back it up or delete it first.)
 
 ```
-git clone https://github.com/LukeSmithxyz/mutt-wizard.git ~/.config/mutt
+git clone https://gitlab.com/dawidpotocki/mutt-wizard.git ~/.config/mutt
 ```
 
 You will want to delete or rename your current `~/.offlineimaprc` and
@@ -91,16 +85,11 @@ ln -s /usr/local/bin/gshred /usr/local/bin/shred
 The automatically deployed configs will look for certain programs for certain
 extra abilities. Consider installing the following for the extra functionality.
 
-+ `urlscan` -- Detecting and following links with `ctrl-u`
 + `mupdf` -- for viewing attached pdfs (`v` to view attachments, then select
   .pdf)
-+ `notmuch` -- for mail searching and indexing set to `ctrl-f`. Be sure to run
-  `notmuch setup`. Remember your mail is in `~/.mail/` when you configure
-  notmuch.
 + `w3m` and/or `w3mimg` -- for viewing images. Like .pdfs, view in the attachments menu.
 + A cron manager if you want the autosync feature.
 + `iproute2mac` for Mac users who want the autosync feature.
-+ `mpv` if you want the autosync feature to notify you with a ding on new mail.
 
 ## The autosync
 
@@ -118,14 +107,6 @@ You can also use [pam-gnupg](https://github.com/cruegge/pam-gnupg) if you want
 to just log into your keyring immediately on log in. This is what I do, but
 it's less secure if you leave you computer logged on.
 
-## You can help!
-
-If you use mutt with a particular host or domain, put your server information
-in `domains.csv`! This will make everyone else who uses your email provider's
-life much easier!
-
-Or you can help monetarily via [Patreon](https://patreon.com/lukesmith) or
-[Paypal](https://paypal.me/LukeMSmith)!
 
 ## Notes
 

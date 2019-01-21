@@ -1,4 +1,4 @@
-text/plain; vim %s ;
+text/plain; nvim %s ;
 text/html; ~/.config/mutt/etc/openfile.sh %s ;
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 image/*; ~/.config/mutt/etc/muttimage.sh %s ; copiousoutput
