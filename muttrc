@@ -43,6 +43,8 @@ bind pager \031 previous-line      # wheel
 bind pager \005 next-line          # 
 macro index,pager S <sync-mailbox>
 macro index,pager gj "<change-folder>=Junk<enter>" "Go to junk."
+macro index,pager \Cu "|urlscan -r 'setsid $BROWSER \"{}\"'"\n
+macro index,pager ,, "|urlscan -r 'setsid $BROWSER \"{}\"'"\n
 
 # View attachments properly.
 bind attach <return> view-mailcap

@@ -29,9 +29,6 @@ the right places. You get:
   `i` prefix in mutt: `i1`: first email account, `i5`: fifth, etc.
 + Easy movement to mail folders in mutt: `gi`: go to inbox, `gs` to sent mail,
   `ga` to archive, `gS` to spam, `gd` to drafts, etc.
-+ Some default controls and colors. This system is going to be integrated into
-  my [public auto-rice script](https://larbs.xyz) so I want it to look pretty
-  and be usable out the box.
 + An optional autosync script that will smartly run offlineimap when connected
   to the internet at what interval you want and will notify you with a ding
   when new mail arrives.
@@ -90,13 +87,14 @@ extra abilities. Consider installing the following for the extra functionality.
 + `w3m` and/or `w3mimg` -- for viewing images. Like .pdfs, view in the attachments menu.
 + A cron manager if you want the autosync feature.
 + `iproute2mac` for Mac users who want the autosync feature.
++ `urlscan` -- Detecting and following links with ctrl-u
 
 ## The autosync
 
 If you activate the autosync at a significantly infrequent interval, by
 default, your system might prompt you for your GPG password every time. To
 prevent this, you can change the time a GPG unlock lasts by adding a time in
-seconds as below into `~/.gnupg/gpg-agent.conf`:
+seconds (I have them set to `31536000`) as below into `~/.gnupg/gpg-agent.conf`:
 
 ```
 default-cache-ttl <number-of-seconds>
@@ -104,8 +102,7 @@ max-cache-ttl <number-of-seconds>
 ```
 
 You can also use [pam-gnupg](https://github.com/cruegge/pam-gnupg) if you want
-to just log into your keyring immediately on log in. This is what I do, but
-it's less secure if you leave you computer logged on.
+to just log into your keyring immediately on log in.
 
 
 ## Notes
