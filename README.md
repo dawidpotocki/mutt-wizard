@@ -52,7 +52,7 @@ passwords. The whole repo should be cloned to `~/.config/mutt/`. (If you have a
 previous mutt folder, you'll want to back it up or delete it first.)
 
 ```
-git clone https://gitlab.com/dawidpotocki/mutt-wizard.git ~/.config/mutt
+git clone https://github.com/dawidpotocki/mutt-wizard.git ~/.config/mutt
 ```
 
 You will want to delete or rename your current `~/.offlineimaprc` and
