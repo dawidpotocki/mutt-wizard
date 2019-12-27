@@ -1,23 +1,23 @@
 # vim: filetype=neomuttrc
 
 # Default index colors:
-color index yellow default '.*'
-color index_author green default '.*'
+color index blue default '.*'
+color index_author magenta default '.*'
 color index_number blue default
-color index_subject white default '.*'
+color index_subject default default '.*'
 
 # For new mail:
-color index brightyellow black "~N"
-color index_author brightred black "~N"
-color index_subject brightcyan black "~N"
+color index brightyellow default "~N"
+color index_author brightred default "~N"
+color index_subject brightcyan default "~N"
 
 # Header colors:
 color header blue default ".*"
-color header brightgreen default "^(From)"
+color header brightmagenta default "^(From)"
 color header brightwhite default "^(Subject)"
-color header brightyellow default "^(Date)"
-color header brightwhite default "^(CC|BCC)"
-color header blue default "^(To)"
+color header brightblue default "^(Date)"
+color header cyan default "^(CC|BCC)"
+color header brightcyan default "^(To)"
 
 mono bold bold
 mono underline underline
@@ -25,7 +25,7 @@ mono indicator reverse
 mono error bold
 color normal default default
 color indicator brightwhite brightblack
-color sidebar_divider brightblack black
+color sidebar_divider black default
 color sidebar_flagged red black
 color sidebar_new green black
 color normal brightyellow default
@@ -33,9 +33,9 @@ color error red default
 color tilde black default
 color message cyan default
 color markers red white
-color attachment white default
+color attachment default default
 color search brightmagenta default
-color status blue black
+color status blue default
 color hdrdefault brightgreen default
 color quoted green default
 color quoted1 blue default
@@ -55,6 +55,8 @@ color body brightblue default "^# \.*" # Headings as bold blue
 color body brightcyan default "^## \.*" # Subheadings as bold cyan
 color body brightgreen default "^### \.*" # Subsubheadings as bold green
 color body yellow default "^(\t| )*(-|\\*) \.*" # List items as yellow
+color body red default "^(-\.*)"
+color body green default "^(\\+\.*)"
 color body brightcyan default "[;:][-o][)/(|]" # emoticons
 color body brightcyan default "[;:][)(|]" # emoticons
 color body brightcyan default "[ ][*][^*]*[*][ ]?" # more emoticon?
