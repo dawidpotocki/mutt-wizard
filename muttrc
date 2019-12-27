@@ -9,11 +9,10 @@ source personal.muttrc
 set sleep_time = 0
 set sort = 'reverse-date'
 set editor = $EDITOR
-#set copy = no
 set timeout = "5"
 set mail_check = "10"
 set mailcap_path = ~/.config/mutt/etc/mailcap
-set date_format="%y/%m/%d %I:%M"
+set date_format="%Y/%m/%d %I:%M%p"
 set index_format="%2C %zs %?X?A& ? %D %-15.15F %s (%-4.4c)"
 set markers = no
 set mark_old = no
@@ -36,15 +35,16 @@ bind pager G bottom
 bind index D purge-message
 bind index u undelete-message
 bind index F search
+bind index f recall-message
 bind index,pager R group-reply
 bind index \031 previous-undeleted #
 bind index \005 next-undeleted     # Mouse
 bind pager \031 previous-line      # wheel
 bind pager \005 next-line          #
+bind attach,browser,pager,index \Cu half-up
+bind attach,browser,pager,index \Cd half-down
 macro index,pager S <sync-mailbox>
 macro index,pager gj "<change-folder>=Junk<enter>" "Go to junk."
-macro index,pager \Cu "|urlscan -r 'setsid $BROWSER \"{}\"'"\n
-macro index,pager ,, "|urlscan -r 'setsid $BROWSER \"{}\"'"\n
 
 # View attachments properly.
 bind attach <return> view-mailcap
@@ -56,13 +56,6 @@ set forward_decode              # decode when forwarding
 set forward_quote               # include message in forwards
 set reverse_name                # reply as whomever it was to
 set include                     # include message in replies
-
-#Ctrl-R to mark all as read
-macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
-
-#sync email
-macro index O "<shell-escape>$HOME/.config/mutt/etc/mailsync.sh<enter>" "run offlineimap to sync all mail"
-macro index o "<shell-escape>$HOME/.config/mutt/etc/mailsync.sh -qf INBOX<enter>" "run offlineimap to sync inbox"
 
 #copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
